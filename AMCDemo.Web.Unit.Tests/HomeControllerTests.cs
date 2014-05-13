@@ -14,5 +14,13 @@ namespace AMCDemo.Web.Unit.Tests
             var sut = new HomeController();
             sut.Should().BeAssignableTo<Controller>();
         }
+
+        [Test]
+        public void IndexReturnsViewResult()
+        {
+            var sut = new HomeController();
+            var result = sut.Index();
+            result.Should().BeOfType<ViewResult>();
+        }
     }
 }
