@@ -1,8 +1,10 @@
 ﻿using System.Web.Mvc;
 using AMCDemo.Web.Controllers;
+using AMCDemo.Web.Interfaces;
 using AMCDemo.Web.Unit.Tests.DependencyInjection;
 using AMCDemo.Web.ViewModels;
 using FluentAssertions;
+using Moq;
 using NUnit.Framework;
 
 namespace AMCDemo.Web.Unit.Tests
@@ -43,6 +45,17 @@ namespace AMCDemo.Web.Unit.Tests
             var sut = container.Resolve<HomeController>();
             var result = sut.Index();
             result.Model.Should().BeOfType<HomeIndexViewModel>();
+        }
+
+        [Test]
+        public void IndexCallsGreetingService()
+        {
+            var container = UnitTestInstaller.CreateContainer();
+            var sut = container.Resolve<HomeController>();
+            sut.Index();
+
+            var service = container.Resolve<Mock<IGreetingService>>();
+            service.Verify(svc => svc.GetGreeting());
         }
     }
 }

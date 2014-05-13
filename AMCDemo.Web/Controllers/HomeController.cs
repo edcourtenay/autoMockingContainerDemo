@@ -19,7 +19,7 @@ namespace AMCDemo.Web.Controllers
         public ViewResult Index()
         {
             return View("Index", new HomeIndexViewModel {
-                Greeting = "Hello DevWeek!",
+                Greeting = _greetingService.GetGreeting(),
                 Date = new DateTime(2014, 4, 2)
             });
         }
