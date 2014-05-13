@@ -15,7 +15,8 @@ namespace AMCDemo.Web.Unit.Tests
         public void SutIsController()
         {
             var greetingService = Mock.Of<IGreetingService>();
-            var sut = new HomeController(greetingService);
+            var dateService = Mock.Of<IDateService>();
+            var sut = new HomeController(greetingService, dateService);
             sut.Should().BeAssignableTo<Controller>();
         }
 
@@ -23,7 +24,8 @@ namespace AMCDemo.Web.Unit.Tests
         public void IndexReturnsViewResult()
         {
             var greetingService = Mock.Of<IGreetingService>();
-            var sut = new HomeController(greetingService);
+            var dateService = Mock.Of<IDateService>();
+            var sut = new HomeController(greetingService, dateService);
             var result = sut.Index();
             result.Should().BeOfType<ViewResult>();
         }
@@ -32,7 +34,8 @@ namespace AMCDemo.Web.Unit.Tests
         public void IndexReturnsViewResultForIndexView()
         {
             var greetingService = Mock.Of<IGreetingService>();
-            var sut = new HomeController(greetingService);
+            var dateService = Mock.Of<IDateService>();
+            var sut = new HomeController(greetingService, dateService);
             var result = sut.Index();
             result.ViewName.Should().Be("Index");
         }
@@ -41,9 +44,12 @@ namespace AMCDemo.Web.Unit.Tests
         public void IndexReturnsViewResultWithModel()
         {
             var greetingService = Mock.Of<IGreetingService>();
-            var sut = new HomeController(greetingService);
+            var dateService = Mock.Of<IDateService>();
+            var sut = new HomeController(greetingService, dateService);
             var result = sut.Index();
             result.Model.Should().BeOfType<HomeIndexViewModel>();
         }
     }
+
+
 }
