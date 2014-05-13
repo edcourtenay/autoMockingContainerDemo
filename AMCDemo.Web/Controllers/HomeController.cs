@@ -6,7 +6,7 @@ namespace AMCDemo.Web.Controllers
     {
         public ViewResult Index()
         {
-            return new ViewResult();
+            return View("Index");
         }
     }
 }
