@@ -1,0 +1,20 @@
+﻿@using System.Globalization
+@model AMCDemo.Web.ViewModels.HomeIndexViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Auto Mocking Container Demo</title>
+    </head>
+    <body>
+        <div>
+            <h1>@Model.Greeting</h1>
+            <h2>@Model.Date.ToString("D", CultureInfo.InvariantCulture)</h2>  
+        </div>
+    </body>
+</html>

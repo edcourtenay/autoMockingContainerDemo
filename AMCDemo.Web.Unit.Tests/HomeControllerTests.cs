@@ -1,5 +1,4 @@
-﻿using System.Security.Permissions;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using AMCDemo.Web.Controllers;
 using AMCDemo.Web.ViewModels;
 using FluentAssertions;
@@ -40,5 +39,7 @@ namespace AMCDemo.Web.Unit.Tests
             var result = sut.Index();
             result.Model.Should().BeOfType<HomeIndexViewModel>();
         }
+
+
     }
 }
