@@ -1,3 +1,7 @@
+using AMCDemo.Web.Interfaces;
+using AMCDemo.Web.Services;
+using Ninject.Modules;
+
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(AMCDemo.Web.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(AMCDemo.Web.App_Start.NinjectWebCommon), "Stop")]
 
@@ -61,6 +65,15 @@ namespace AMCDemo.Web.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Load<ApplicationModule>();
         }        
+    }
+
+    public class ApplicationModule : NinjectModule {
+        public override void Load()
+        {
+            Bind<IGreetingService>().To<GreetingService>();
+            Bind<IDateService>().To<DateService>();
+        }
     }
 }
