@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B7BDCA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Tests", "Unit Tests", "{C190AEF3-17D8-4ED3-A60F-C1123C376E30}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMCDemo.Web.Unit.Tests", "AMCDemo.Web.Unit.Tests\AMCDemo.Web.Unit.Tests.csproj", "{9FBB1FBA-5D0B-4AA0-9823-E626E100A316}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,8 +26,15 @@ Global
 		{78C211EC-BA6D-4474-949E-4923F73556C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78C211EC-BA6D-4474-949E-4923F73556C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78C211EC-BA6D-4474-949E-4923F73556C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FBB1FBA-5D0B-4AA0-9823-E626E100A316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FBB1FBA-5D0B-4AA0-9823-E626E100A316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FBB1FBA-5D0B-4AA0-9823-E626E100A316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FBB1FBA-5D0B-4AA0-9823-E626E100A316}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9FBB1FBA-5D0B-4AA0-9823-E626E100A316} = {C190AEF3-17D8-4ED3-A60F-C1123C376E30}
 	EndGlobalSection
 EndGlobal
