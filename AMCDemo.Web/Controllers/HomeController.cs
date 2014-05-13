@@ -8,10 +8,12 @@ namespace AMCDemo.Web.Controllers
     public class HomeController : Controller
     {
         private readonly IGreetingService _greetingService;
+        private readonly IDateService _dateService;
 
-        public HomeController(IGreetingService greetingService)
+        public HomeController(IGreetingService greetingService, IDateService dateService)
         {
             _greetingService = greetingService;
+            _dateService = dateService;
         }
 
         public ViewResult Index()
